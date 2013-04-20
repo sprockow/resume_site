@@ -31,6 +31,12 @@ h1, h2, h3, h4 {
 	width: 100%;	
 }
 
+#purpose-statement p
+{
+	margin-top: 15px;	
+}
+
+
 
 .skills-list ul {
 	font-size: 1em;	
