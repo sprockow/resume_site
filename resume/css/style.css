@@ -51,12 +51,12 @@ body {
  * Also: hot pink! (or customize the background color to match your design)
  */
 ::-moz-selection {
-	background: #fe57a1;
+	background: #57fea1;
 	color: #fff;
 	text-shadow: none;
 }
 ::selection {
-	background: #fe57a1;
+	background: #57fea1;
 	color: #fff;
 	text-shadow: none;
 }
@@ -311,9 +311,14 @@ td {
    This example overrides the primary ('mobile first') styles
    Modify as content requires.
    ========================================================================== */
-@media only screen and (min-width: 35em) {
-/* Style adjustments for viewports that meet the condition */
+@media only screen {
+
 }
+
+	.only-print {
+		display: none;
+	}
+
 
 /*
 Copyright (c) 2009, Yahoo! Inc. All rights reserved.
@@ -361,8 +366,13 @@ h2, h3, h4 {
 
 .main a {
 	text-decoration: none;
-	color: #444;
+	color: #336;
 }
+
+.main a:hover {
+	text-decoration: underline;
+}
+
 h1, h2, h3, h4 {
 	color: #333;
 	font-weight: normal;
@@ -373,7 +383,6 @@ h1, h2, h3, h4 {
 .print-link
 {
 	padding-top: 15px;
-	color: #999;
 }
 
 .print-link a
@@ -537,6 +546,15 @@ a#pdf:hover {
 	top: 0.35em;
 	right: 0;
 }
+
+
+/*print media*/
+
+@media print {
+	@import print.css
+}
+
+
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
    ========================================================================== */
