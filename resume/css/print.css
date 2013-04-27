@@ -42,6 +42,7 @@ h1, h2, h3, h4 {
 
 .self-description p {
 	font-size: 1.1em;
+	margin-bottom: 0em;
 }
 
 .yui-ge div.first, .yui-gf .yui-u {
@@ -67,10 +68,15 @@ h1, h2, h3, h4 {
 	padding-bottom: 0em;
 	margin-bottom: 1em;
 }
+.first-printed {
+	margin-top: 1em;
+}
 
 .last-printed {
 	border: none;
 	border-bottom: none;
+	margin-bottom: 0em;
+	margin-top: 1em;
 }
 
 .job ul {
