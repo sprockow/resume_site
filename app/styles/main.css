@@ -1,4 +1,4 @@
-﻿/*
+/*
  * HTML5 Boilerplate
  *
  * What follows is the result of much research on cross-browser styling.
@@ -16,8 +16,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 	display: block;
 }
 audio, canvas, video {
-	display: inline-block; *;
-	display: inline; *;
+	display: inline-block;
+	display: inline;
 	zoom: 1;
 }
 audio:not([controls]) { display: none; }
@@ -219,7 +219,7 @@ legend {
 button, input, select, textarea {
 	font-size: 100%;
 	margin: 0;
-	vertical-align: baseline; *;
+	vertical-align: baseline;
 	vertical-align: middle;
 }
 /*
@@ -235,7 +235,7 @@ button, input {
  */
 button, input[type=button], input[type=reset], input[type=submit] {
 	cursor: pointer;
-	-webkit-appearance: button; *;
+	-webkit-appearance: button;
 	overflow: visible;
 }
 /*
@@ -250,7 +250,7 @@ button[disabled], input[disabled] {
 input[type=checkbox], input[type=radio] {
 	box-sizing: border-box;
 	padding: 0;
-*width: 13px; *;
+*width: 13px;
 	height: 13px;
 }
 input[type=search] {
@@ -337,14 +337,6 @@ version: 2.7.0
 	text-align: left;
 	width: 73.076em;
 }
-body {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	color: #444;
-	text-align:center;
-}
-h2, h3, h4 {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 #inner {
 	padding: 10px 50px;
 	margin: 60px auto;
@@ -397,7 +389,7 @@ h1, h2, h3, h4 {
 
 #purpose-statement p
 {
-	margin-top: 0px;	
+	margin-top: 0px;
 }
 
 /* //-- core typography and style -- */
@@ -490,39 +482,15 @@ a#pdf:hover {
 .self-description p {
 	margin-right: 2em;
 }
-.talent {
-	margin-right: 1%;
+
+dl dt {
+	font-weight:bold;
 }
-.talent:last-child {
-	float: right;
-	margin-right: 0px;
-}
+
 .last {
 	border: none;
 }
-.skills-list ul {
-	padding: 0px;
-	margin: 0px;
-}
-.skills-list li {
-	margin: 3px 0;
-	padding: 3px 0;
-	line-height: 1.5em;
-	list-style-type: none;
-}
-.skills-list li span {
-	font-size: 152%;
-	display: block;
-	margin-bottom: -2px;
-	padding: 0;
-}
-.talent {
-	width: 32%;
-	float: left;
-}
-.talent h2 {
-	margin-bottom: 6px;
-}
+
 #srt-ttab {
 	margin-bottom: 100px;
 	text-align: center;
@@ -547,11 +515,113 @@ a#pdf:hover {
 	right: 0;
 }
 
-
-/*print media*/
-
 @media print {
-	@import print.css
+
+	body {
+		color: #000;
+	}
+
+	#inner {
+		padding: 0px 60px;
+		margin: 0px auto;
+		background: none;
+		border: none;
+	}
+	#hd {
+		margin: 1em 0em 0em 0em;
+		padding-bottom: 1em;
+		border-bottom: 1px solid #ccc;
+	}
+	#hd h1 {
+		font-size: 3em;
+		color: #000;
+	}
+	#hd h2 {
+		font-size: 1.5em;
+		color: #000;
+	}
+
+	h1, h2, h3, h4 {
+		color: #444;
+	}
+
+	.only-print {
+		display: inherit;
+	}
+
+	.education .yui-u {
+		margin-bottom: .5em;
+	}
+
+	.yui-ge .yui-u, .yui-gf div.first {
+		display: none;
+	}
+
+	.self-description p {
+		font-size: 1.1em;
+		margin-bottom: 0em;
+	}
+
+	.yui-ge div.first, .yui-gf .yui-u {
+
+		width: 100%;
+	}
+
+
+	.skills-list ul {
+		font-size: 1em;
+	}
+	.skills-list li {
+		padding: 0px;
+		margin: 0px;
+		font-size: 1em;
+		line-height: 1.4em;
+	}
+
+	.job {
+		padding-bottom: 0em;
+		margin-bottom: 1em;
+	}
+
+	.job.print-empty {
+		padding-bottom: 1em;
+	}
+
+	.first-printed {
+		margin-top: 1em;
+	}
+
+	.last-printed {
+		border: none;
+		border-bottom: none;
+		margin-bottom: 0em;
+		margin-top: 1em;
+	}
+
+	.job ul {
+		font-size: 1.1em;
+	}
+	.job li {
+		list-style: disc;
+		margin-left: 2em;
+		line-height: 1.4em;
+		font-size: .9em;
+	}
+
+	.job.last {
+		padding-bottom: 0px;
+	}
+
+	.no-print {
+
+		display: none;
+	}
+
+	.education p {
+		margin-bottom: 0px;
+		margin-top: .5em;
+		line-height: 1em;
+	}
 }
 
 
@@ -567,7 +637,7 @@ a#pdf:hover {
 	background-color: transparent;
 	background-repeat: no-repeat;
 	text-align: left;
-	direction: ltr; *;
+	direction: ltr;
 	line-height: 0;
 }
 .ir br {
@@ -630,6 +700,7 @@ a#pdf:hover {
 a, a:visited {
 	text-decoration: underline;
 }
+
 a[href]:after {
 	content: " (" attr(href) ")";
 }
