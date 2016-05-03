@@ -156,8 +156,19 @@ ul, ol {
 	padding: 0 0 0 40px;
 }
 dd {
-	margin: 0 0 0 40px;
+	margin-left: 1em;
+	display: inline;
 }
+
+dd:after {
+	content: ' ';
+	display: block;
+}
+
+dd:last-child:after {
+	display: none;
+}
+
 nav ul, nav ol {
 	list-style: none;
 	list-style-image: none;
@@ -459,7 +470,6 @@ a#pdf:hover {
 	position: relative;
 	margin-bottom: 1em;
 	padding-bottom: 1em;
-	border-bottom: 1px solid #ccc;
 }
 .job:first-child {
 	padding-top: 1em;
@@ -487,8 +497,15 @@ a#pdf:hover {
 	margin-right: 2em;
 }
 
+dl {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 dl dt {
 	font-weight:bold;
+	display:inline-block;;
+	min-width: 12em;
 }
 
 .last {
@@ -566,6 +583,10 @@ dl dt {
 		margin-bottom: 0em;
 	}
 
+	.contact-info.only-print {
+		text-align:right;
+	}
+
 	.yui-ge div.first, .yui-gf .yui-u {
 
 		width: 100%;
@@ -588,7 +609,7 @@ dl dt {
 	}
 
 	.job.print-empty {
-		padding-bottom: 1em;
+		margin-bottom: 0;
 	}
 
 	.first-printed {
@@ -599,7 +620,6 @@ dl dt {
 		border: none;
 		border-bottom: none;
 		margin-bottom: 0em;
-		margin-top: 1em;
 	}
 
 	.job ul {
