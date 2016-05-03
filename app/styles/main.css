@@ -461,6 +461,10 @@ a#pdf:hover {
 	padding-bottom: 1em;
 	border-bottom: 1px solid #ccc;
 }
+.job:first-child {
+	padding-top: 1em;
+}
+
 .job h4 {
 	position: absolute;
 	right: 0;
