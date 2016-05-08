@@ -80,4 +80,11 @@
   }
 
   // Your custom JavaScript goes here
+
+  document.addEventListener('DOMContentLoaded', function(){
+   document.getElementById('printLink').addEventListener('click', function() {
+     window.print();
+   });
+  });
+
 })();

@@ -384,17 +384,13 @@ h1, h2, h3, h4 {
 	margin: 0px;
 }
 
-.print-link
+#print-link
 {
 	padding-top: 15px;
-}
-
-.print-link a
-{
 	color: #999;
 }
 
-.print-link a:hover
+#print-link:hover
 {
 	color: #444;
 }
