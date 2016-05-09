@@ -30,6 +30,7 @@ import del from 'del';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import swPrecache from 'sw-precache';
+import awspublish from 'gulp-awspublish';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import {output as pagespeed} from 'psi';
 import pkg from './package.json';
@@ -254,6 +255,32 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
     // Translates a static file path to the relative URL that it's served from.
     stripPrefix: path.join(rootDir, path.sep)
   });
+});
+
+gulp.task('publish', function() {
+
+  // create a new publisher using S3 options
+  // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
+  var publisher = awspublish.create({
+    region: 'us-west-2',
+    params: {
+      Bucket: 'stephenprockow.info'
+    }
+  });
+
+  // define custom headers
+  var headers = {
+    'Cache-Control': 'max-age=0, public'
+  };
+
+  return gulp.src(['dist/**/*', 'dist/*'])
+
+    // publisher will add Content-Length, Content-Type and headers specified above
+    // If not specified it will set x-amz-acl to public-read by default
+    .pipe(publisher.publish(headers))
+
+     // print upload updates to console
+    .pipe(awspublish.reporter());
 });
 
 // Load custom tasks from the `tasks` directory
